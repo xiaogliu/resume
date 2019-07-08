@@ -1,9 +1,19 @@
 var gulp = require("gulp");
+
+// gulp browser
 var browserify = require("browserify");
 var source = require("vinyl-source-stream");
-var watchify = require("watchify");
 var tsify = require("tsify");
+
+// watch
+var watchify = require("watchify");
 var fancy_log = require("fancy-log");
+
+// uglify
+var uglify = require('gulp-uglify');
+var sourcemaps = require('gulp-sourcemaps');
+var buffer = require('vinyl-buffer');
+
 var paths = {
   pages: ["src/*.html"]
 };
@@ -26,6 +36,14 @@ function bundle() {
   return watchedBrowserify
     .bundle()
     .pipe(source("bundle.js"))
+    
+    // add uglify
+    .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(uglify())
+    .pipe(sourcemaps.write('./'))
+
+    // dist
     .pipe(gulp.dest("dist"));
 }
 
