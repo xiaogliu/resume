@@ -10,9 +10,9 @@ var watchify = require("watchify");
 var fancy_log = require("fancy-log");
 
 // uglify
-var uglify = require('gulp-uglify');
-var sourcemaps = require('gulp-sourcemaps');
-var buffer = require('vinyl-buffer');
+var uglify = require("gulp-uglify");
+var sourcemaps = require("gulp-sourcemaps");
+var buffer = require("vinyl-buffer");
 
 var paths = {
   pages: ["src/*.html"]
@@ -25,7 +25,13 @@ var watchedBrowserify = watchify(
     entries: ["src/main.ts"],
     cache: {},
     packageCache: {}
-  }).plugin(tsify)
+  })
+    .plugin(tsify)
+    // babel transfer
+    .transform("babelify", {
+      presets: ["es2015"],
+      extensions: [".ts"]
+    })
 );
 
 gulp.task("copy-html", function() {
@@ -33,18 +39,20 @@ gulp.task("copy-html", function() {
 });
 
 function bundle() {
-  return watchedBrowserify
-    .bundle()
-    .pipe(source("bundle.js"))
-    
-    // add uglify
-    .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(uglify())
-    .pipe(sourcemaps.write('./'))
+  return (
+    watchedBrowserify
+      .bundle()
+      .pipe(source("bundle.js"))
 
-    // dist
-    .pipe(gulp.dest("dist"));
+      // add uglify
+      .pipe(buffer())
+      .pipe(sourcemaps.init({ loadMaps: true }))
+      .pipe(uglify())
+      .pipe(sourcemaps.write("./"))
+
+      // dist
+      .pipe(gulp.dest("dist"))
+  );
 }
 
 gulp.task("default", gulp.series(gulp.parallel("copy-html"), bundle));
