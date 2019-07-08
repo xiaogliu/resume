@@ -5,6 +5,8 @@
   "main": "src/main.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --inline --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
     "gulp": "gulp"
   },
   "repository": {
@@ -14,21 +16,18 @@
   "author": "Xiaoguang Liu",
   "license": "MIT",
   "dependencies": {
-    "browserify": "^16.3.0",
-    "gulp": "^4.0.2",
-    "gulp-typescript": "^5.0.1",
-    "tsify": "^4.0.1",
-    "typescript": "^3.5.2",
-    "vinyl-source-stream": "^2.0.0"
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "uglifyjs-webpack-plugin": "^2.1.3",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2",
+    "webpack-merge": "^4.2.1"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-es2015": "^6.24.1",
-    "babelify": "^8.0.0",
-    "fancy-log": "^1.3.3",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2",
-    "vinyl-buffer": "^1.0.1",
-    "watchify": "^3.11.1"
+    "typescript": "^3.5.2",
+    "webpack": "^5.0.0-alpha.17"
   }
 }
