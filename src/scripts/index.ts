@@ -1,4 +1,5 @@
-import '../styles/reset.css'
+import './vender/stackblur.min.js'
+import '../styles/common/reset.css'
 import '../styles/index.scss'
 
 function hello(name: string) {
