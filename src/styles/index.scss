@@ -14,16 +14,21 @@
   width: 100%;
   transition: opacity 1s linear;
 }
+.image-container canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 .image-container img.loaded {
   opacity: 1;
 }
 
-.img-small {
-  filter: blur(50px);
-  /* this is needed so Safari keeps sharp edges */
-  transform: scale(1);
-}
+// .img-small {
+//   filter: blur(50px);
+//   /* this is needed so Safari keeps sharp edges */
+//   transform: scale(1);
+// }
 body {
   color: red;
 }
