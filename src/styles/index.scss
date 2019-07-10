@@ -1,4 +1,4 @@
-.placeholder {
+.image-container {
   background-color: #f6f6f6;
   background-size: cover;
   background-repeat: no-repeat;
@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-.placeholder img {
+.image-container img {
   position: absolute;
   opacity: 0;
   top: 0;
@@ -15,7 +15,7 @@
   transition: opacity 1s linear;
 }
 
-.placeholder img.loaded {
+.image-container img.loaded {
   opacity: 1;
 }
 

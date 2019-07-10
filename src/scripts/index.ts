@@ -4,24 +4,30 @@ import "../styles/index.scss";
 import "../styles/reset.css";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const $placeholder: HTMLElement = document.querySelector(".placeholder");
-  const $small: HTMLImageElement = document.querySelector(".img-small");
+  const imageNodeList: NodeListOf<HTMLElement> = document.querySelectorAll(
+    ".image-container"
+  );
+  const imageContainer: HTMLElement[] = Array.prototype.slice.apply(
+    imageNodeList
+  );
 
-  // const small: HTMLElement = document.querySelector('.img-small')
+  imageContainer.forEach(e => {
+    const $small: HTMLImageElement = e.querySelector(".img-small");
 
-  // 1: load small image and show it
-  const img: HTMLImageElement = new Image();
+    // 1: load small image and show it
+    const img: HTMLImageElement = new Image();
 
-  img.src = $small.src;
-  img.onload = () => {
-    $small.classList.add("loaded");
-  };
+    img.src = $small.src;
+    img.onload = () => {
+      $small.classList.add("loaded");
+    };
 
-  // 2: load large image
-  const imgLarge: HTMLImageElement = new Image();
-  imgLarge.src = $placeholder.dataset.large;
-  imgLarge.onload = () => {
-    imgLarge.classList.add("loaded");
-  };
-  $placeholder.appendChild(imgLarge);
+    // 2: load large image
+    const imgLarge: HTMLImageElement = new Image();
+    imgLarge.src = e.dataset.large;
+    imgLarge.onload = () => {
+      imgLarge.classList.add("loaded");
+    };
+    e.appendChild(imgLarge);
+  });
 });
