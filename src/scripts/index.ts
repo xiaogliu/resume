@@ -14,24 +14,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   imageContainer.forEach(e => {
     const $small: HTMLImageElement = e.querySelector(".img-small");
+    // 这里可以提出进一步封装，调用时输入 image 宽高
+    const addInnerHtml: string = `
+      <div style="padding-bottom: 66.6%;"></div>
+      <canvas></canvas>
+    `;
+    e.innerHTML = e.innerHTML + addInnerHtml;
     const $canvas: HTMLCanvasElement = e.querySelector("canvas");
 
     // 1: load small image and show it
     const img: HTMLImageElement = new Image();
-
     img.src = $small.src;
     img.onload = () => {
       $small.classList.add("loaded");
-      console.log(StackBlur, $small, $canvas, 29999);
-      StackBlur.image($small, $canvas, 70);
+      StackBlur.image($small, $canvas, 30);
     };
 
     // 2: load large image
-    // const imgLarge: HTMLImageElement = new Image();
-    // imgLarge.src = e.dataset.large;
-    // imgLarge.onload = () => {
-    //   imgLarge.classList.add("loaded");
-    // };
-    // e.appendChild(imgLarge);
+    const imgLarge: HTMLImageElement = new Image();
+    imgLarge.src = e.dataset.large;
+    imgLarge.onload = () => {
+      imgLarge.classList.add("loaded");
+    };
+    e.appendChild(imgLarge);
   });
 });
