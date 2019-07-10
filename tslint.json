@@ -2,5 +2,6 @@
   "extends": [
     "tslint:latest",
     "tslint-config-prettier"
-  ]
+  ],
+  "object-literal-sort-keys": false,
 }
