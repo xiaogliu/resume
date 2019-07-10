@@ -10,7 +10,7 @@ module.exports = {
   },
   output: {
     // output directory
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "../dist"),
     // variable in []
     filename: "js/[name].[hash:8].js",
     // html static file directory
