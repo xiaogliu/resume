@@ -10,7 +10,7 @@ module.exports = {
   },
   output: {
     // output directory
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "../dist"),
     // variable in []
     filename: "js/[name].[hash:8].js",
     // html static file directory
@@ -35,18 +35,18 @@ module.exports = {
           ]
         },
         exclude: /node_modules/
+      },
+      {
+        test: /\.(png|jpg|jpeg|svg|gif)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "img/[name].[ext]"
+            }
+          }
+        ]
       }
-      // {
-      //   test: /\.(png|jpg|jpeg|svg|gif)$/,
-      //   use: [
-      //     {
-      //       loader: "file-loader",
-      //       options: {
-      //         name: "img/[name].[ext]"
-      //       }
-      //     }
-      //   ]
-      // }
     ]
   },
   resolve: {
