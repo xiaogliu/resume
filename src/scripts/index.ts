@@ -1,4 +1,4 @@
-import "../images/test.jpg";
+// import "../images/";
 
 // css import sequence impact cancat css
 import "../styles/reset.css";
