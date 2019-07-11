@@ -1,9 +1,14 @@
-$projectWraperWidth: 262px;
+$projectWraperWidth: 300px;
 $projectBorderRadius: 8px;
-$mainContentWidth: 960px;
-$navHeight: 60px;
+$mainContentWidth: 980px;
+$navHeight: 70px;
 $imgTop: -464px;
 $transitionTime: 0.1s;
+$backgroundColor: #f4f7f6;
+$mainFontColor: #202121;
+$mainColor: #49c5b6;
+$borderRadius: 36px;
+
 .img-place-holder {
   display: none;
 }
@@ -11,9 +16,14 @@ $transitionTime: 0.1s;
   width: $mainContentWidth;
   margin: 0 auto;
 }
+body {
+  color: $mainFontColor;
+}
 header {
   min-width: 1300px;
-  background-color: #0ca2ba;
+  background-color: $backgroundColor;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e6eaea;
   .header-container {
     @extend .main-content;
     padding-top: $navHeight + 30;
@@ -23,34 +33,45 @@ header {
       width: 100%;
       top: 0;
       left: 0;
-      background: #2c3c51;
+      background-color: $backgroundColor;
       z-index: 9999;
-      box-shadow: 0 2px 10px #555;
+      box-shadow: 0 2px 10px #e3e4e3;
+      a {
+        display: block;
+        height: 70px;
+        width: 190px;
+        line-height: 70px;
+        color: $mainFontColor;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.3s;
+        text-align: center;
+        &:hover {
+          color: #64686a;
+        }
+      }
       ul {
-        width: $mainContentWidth;
-        height: $navHeight;
         margin: 0 auto;
         li {
           float: left;
-          line-height: 40px;
-          margin: 10px;
-          padding-left: 10px;
-          font-size: 30px;
-          text-align: left;
-          color: rgba(12, 162, 186, 0.3);
-          border-left: 10px solid rgba(12, 162, 186, 0.3);
-          border-radius: 10px;
-          a {
-            color: rgba(12, 162, 186, 0.3);
-          }
+          border-right: 1px solid #e6eaea;
         }
         .nav-active {
-          color: #1398ad;
-          border-left: 10px solid #1398ad;
+          background-color: $mainColor;
           a {
-            color: #1398ad;
+            color: #fff;
+            &:hover {
+              background-color: #42ab9e;
+              color: #fff;
+            }
           }
         }
+      }
+      .pdf-file {
+        position: absolute;
+        right: 0;
+        top: 0;
+        border-left: 1px solid #e6eaea;
       }
     }
     #about {
@@ -61,7 +82,7 @@ header {
         padding: 0 10px;
         h2 {
           font-size: 22px;
-          font-weight: 600;
+          font-weight: 500;
           margin: 10px 0;
         }
         ul {
@@ -76,12 +97,13 @@ header {
           height: 200px;
           border-radius: 50%;
           overflow: hidden;
+          border: 1px solid $mainFontColor;
         }
         .name-position {
           width: 200px;
           height: 40px;
           text-align: center;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+          border-bottom: 1px solid #e6eaea;
         }
         .name {
           @extend .name-position;
@@ -89,36 +111,37 @@ header {
           p {
             font-size: 16px;
             line-height: 40px;
-            font-weight: 600;
+            font-weight: 500;
           }
         }
         .position {
           @extend .name-position;
           p {
             line-height: 40px;
-            font-weight: 600;
+            font-weight: 500;
           }
         }
         .my-info {
           a {
-            color: #000;
-            box-shadow: none;
-            transition: color 0.5s;
-            -webkit-transition: color 0.5s; /* Safari */
-            animation: sploosh 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-            animation-iteration-count: infinite !important;
+            // padding: 1px 5px 0 5px;
+            color: $mainFontColor;
+            // box-shadow: none;
+            transition: color 0.3s;
+            // animation: sploosh 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+            // animation-iteration-count: infinite !important;
+            // border-radius: $borderRadius;
             &:hover {
-              color: #fff;
+              color: $mainColor;
             }
           }
-          @keyframes sploosh {
-            0% {
-              box-shadow: 0 0 0 0 rgba(7, 105, 173, 0.7);
-            }
-            100% {
-              box-shadow: 0 0 10px 10px rgba(7, 105, 173, 0);
-            }
-          }
+          // @keyframes sploosh {
+          //   0% {
+          //     box-shadow: 0 0 0 0 rgba(255, 78, 78, 0.7);
+          //   }
+          //   100% {
+          //     box-shadow: 0 0 10px 10px rgba(255, 78, 78, 0);
+          //   }
+          // }
         }
         .website {
           p {
@@ -140,24 +163,12 @@ header {
             a {
               display: inline-block;
               height: 28px;
-              color: #000;
-              transition: color 0.5s;
+              color: $mainFontColor;
+              transition: color 0.3s;
               &:hover {
                 color: #fff;
               }
             }
-          }
-        }
-        .pdf-file {
-          margin: 20px 0;
-          a {
-            display: inline-block;
-            width: 100px;
-            height: 30px;
-            line-height: 30px;
-            background: #2c3c51;
-            text-align: center;
-            border-radius: 6px;
           }
         }
       }
@@ -184,8 +195,8 @@ header {
               li {
                 margin: 8px 0;
                 a {
-                  color: #000;
-                  transition: color 0.5s;
+                  color: $mainFontColor;
+                  transition: color 0.3s;
                   &:hover {
                     color: #fff;
                   }
@@ -200,7 +211,7 @@ header {
               margin: 8px 10px 12px 10px;
               font-size: 12px;
               background-color: #fff;
-              border: 1px solid #00aaff;
+              border: 1px solid $mainColor;
               border-radius: 12px;
               .fill {
                 display: block;
@@ -210,10 +221,10 @@ header {
                 line-height: 16px;
                 text-align: left;
                 color: #fff;
-                background-color: #0769ad;
-                border: 1px solid #0769ad;
+                background-color: $mainColor;
+                border: 1px solid $mainColor;
                 border-radius: 12px;
-                box-shadow: 0 0 5px #0769ad;
+                box-shadow: 0 0 5px $mainColor;
                 overflow: hidden;
                 transition: width 1s;
                 &.fill-js {
@@ -246,7 +257,6 @@ header {
                 &.fill-node {
                   width: 40%;
                 }
-                -webkit-transition: width 1s; /* Safari */
               }
             }
           }
@@ -254,7 +264,8 @@ header {
         .work-experience {
           @extend .tech-work-self;
           a {
-            color: #000;
+            color: $mainFontColor;
+            transition: all 0.3s;
           }
           ul {
             margin-left: 10px;
@@ -263,12 +274,10 @@ header {
               .work-company {
                 display: inline-block;
                 font-size: 16px;
-                font-weight: 600;
+                font-weight: 500;
                 margin: 5px 0;
                 a:hover {
-                  color: #ddd;
-                  transition: all 0.5s;
-                  -webkit-transition: all 0.5s; /* Safari */
+                  color: $mainColor;
                 }
               }
               .work-position {
@@ -279,12 +288,15 @@ header {
                 font-size: 12px;
                 margin: 5px 0;
                 span {
-                  background-color: #0769ad;
-                  color: #ddd;
+                  display: inline-block;
+                  background-color: #9fd2d6;
+                  color: #fff;
                   margin: 0 5px 0 5px;
-                  padding: 4px 6px;
-                  font-size: 12px;
-                  border-radius: 5px;
+                  height: 15px;
+                  line-height: 15px;
+                  padding: 1px 5px 0 5px;
+                  font-size: 10px;
+                  border-radius: $borderRadius;
                 }
               }
               .work-content {
@@ -300,58 +312,9 @@ header {
     }
   }
 }
-a {
-  color: #f68c1e;
-}
 #project {
-  min-width: 1300px;
-  background-color: #000;
-  background-image: repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 50px,
-      rgba(44, 60, 81, 0.25) 50px,
-      rgba(44, 60, 81, 0.25) 56px,
-      transparent 56px,
-      transparent 63px,
-      rgba(44, 60, 81, 0.25) 63px,
-      rgba(44, 60, 81, 0.25) 69px,
-      transparent 69px,
-      transparent 116px,
-      rgba(46, 66, 93, 0.25) 116px,
-      rgba(46, 66, 93, 0.25) 166px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 50px,
-      rgba(44, 60, 81, 0.25) 50px,
-      rgba(44, 60, 81, 0.25) 56px,
-      transparent 56px,
-      transparent 63px,
-      rgba(44, 60, 81, 0.25) 63px,
-      rgba(44, 60, 81, 0.25) 69px,
-      transparent 69px,
-      transparent 116px,
-      rgba(46, 66, 93, 0.25) 116px,
-      rgba(46, 66, 93, 0.25) 166px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 5px,
-      rgba(27, 35, 46, 0.25) 5px,
-      rgba(27, 35, 46, 0.25) 10px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 5px,
-      rgba(27, 35, 46, 0.25) 5px,
-      rgba(27, 35, 46, 0.25) 10px
-    );
-  background-size: cover;
-  background-attachment: fixed;
+  min-width: 1200px;
+  background-color: $backgroundColor;
   overflow: hidden;
   padding: 40px 0;
   .cover {
@@ -368,11 +331,10 @@ a {
     @extend .main-content;
   }
   h2 {
-    font-size: 40px;
-    font-weight: bold;
+    font-size: 17px;
+    font-weight: 500;
     text-align: center;
-    color: #fff;
-    padding: 50px;
+    padding: 20px 0 50px;
   }
   .project-example {
     width: 33.33%;
@@ -382,12 +344,9 @@ a {
       position: relative;
       width: $projectWraperWidth;
       margin: 0 auto;
-      border-radius: 13px;
       .project-cover {
         width: $projectWraperWidth;
-        height: $projectWraperWidth;
-        // border-top-left-radius: $projectBorderRadius;
-        // border-top-right-radius: $projectBorderRadius;
+        height: 225px;
         overflow: hidden;
         background: radial-gradient(circle closest-side, #547eb4 50%, white);
         img {
@@ -414,12 +373,8 @@ a {
         position: relative;
         padding: 8px;
         font-size: 12px;
-        background-color: #455a64;
-        border-bottom-left-radius: $projectBorderRadius;
-        border-bottom-right-radius: $projectBorderRadius;
-
+        background-color: #fff;
         .intro {
-          display: none;
           position: absolute;
           width: $projectWraperWidth - 20;
           height: 50px;
@@ -429,6 +384,9 @@ a {
           color: #fff;
           z-index: 1000;
           background: rgba(0, 0, 0, 0.8);
+          a {
+            color: $mainColor;
+          }
         }
         .intro-zhl-prod {
           height: 70px;
@@ -437,10 +395,10 @@ a {
         .main-info {
           h3 {
             font-size: 14px;
-            color: #fff;
+            font-weight: 500;
             display: inline-block;
             a {
-              color: #fff;
+              color: $mainFontColor;
             }
           }
           time {
@@ -450,15 +408,33 @@ a {
           }
         }
         .tags {
-          color: #b0bec5;
+          color: #fff;
           margin: 10px 0 0;
-          border-top: solid 1px rgba(255, 255, 255, 0.075);
+          border-top: 1px solid #e6eaea;
           span {
             display: inline-block;
-            margin: 10px 10px 0 0;
-            padding: 4px;
-            border-radius: 2px;
-            background: rgba(0, 0, 0, 0.125);
+            display: inline-block;
+            background-color: #9fd2d6;
+            color: #fff;
+            margin: 10px 5px 10px 0;
+            // margin: 0 5px 0 5px; 
+            height: 15px;
+            line-height: 15px;
+            padding: 1px 5px 0 5px;
+            font-size: 10px;
+            border-radius: $borderRadius;
+            &:nth-child(2) {
+              background-color: #8154ef;
+            }
+            &:nth-child(3) {
+              background-color: #ff4e4e;
+            }
+            &:nth-child(4) {
+              background-color: #49c5b6;
+            }
+            &:nth-child(5) {
+              background-color: #a6abab;
+            }
           }
         }
       }
