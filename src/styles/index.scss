@@ -97,7 +97,6 @@ header {
           height: 200px;
           border-radius: 50%;
           overflow: hidden;
-          border: 1px solid $mainFontColor;
         }
         .name-position {
           width: 200px;
@@ -346,7 +345,7 @@ header {
       margin: 0 auto;
       .project-cover {
         width: $projectWraperWidth;
-        height: 225px;
+        height: $projectWraperWidth;
         overflow: hidden;
         background: radial-gradient(circle closest-side, #547eb4 50%, white);
         img {
@@ -375,6 +374,7 @@ header {
         font-size: 12px;
         background-color: #fff;
         .intro {
+          display: none;
           position: absolute;
           width: $projectWraperWidth - 20;
           height: 50px;
@@ -410,7 +410,7 @@ header {
         .tags {
           color: #fff;
           margin: 10px 0 0;
-          border-top: 1px solid #e6eaea;
+          border-top: 1px solid #f4f7f6;
           span {
             display: inline-block;
             display: inline-block;
