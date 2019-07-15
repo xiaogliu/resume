@@ -29,7 +29,11 @@
       <section id="about">
         <article class="base-info">
           <div class="avatar">
-            <img src="../images/large/avatar.jpg" alt="avatar" />
+            <!-- this is progressive loading -->
+            <div class="p-load-image-container" data-large="../images/large/avatar.jpg">
+              <img src="../images/small/test.jpg" class="img-small">
+              <div style="padding-bottom: 100%;"></div>
+            </div>
           </div>
           <div class="name">
             <p>刘小光</p>
@@ -76,7 +80,7 @@
                   - 能通过 JavaScript、HTML、CSS
                   构建出浏览器兼容、跨平台（手机、PC）的Web页面；
                 </li>
-                <li>- 掌握 React/Vue 的使用；</li>
+                <li>- 掌握 React/Vue 的使用（React 更加深入）；</li>
                 <li>- 掌握 ES6/7 基础语法；</li>
                 <li>- 熟练使用 Webpack、Gulp 等前端工程化工具；</li>
                 <li>- 熟悉 HTTP 协议；</li>
@@ -91,7 +95,7 @@
                 <span class="fill fill-js">JS, HTML, CSS</span>
               </div>
               <div class="progress-bar">
-                <span class="fill fill-vue">Vue.js</span>
+                <span class="fill fill-vue">React, Vue</span>
               </div>
               <div class="progress-bar">
                 <span class="fill fill-wp">Webpack</span>
@@ -109,14 +113,11 @@
                 <span class="fill fill-jq">jQuery</span>
               </div>
               <div class="progress-bar">
-                <span class="fill fill-ra">React</span>
+                <span class="fill fill-ra">React Native</span>
               </div>
               <div class="progress-bar">
                 <span class="fill fill-node">Node</span>
               </div>
-              <!-- <div class="progress-bar">
-                <span class="fill fill-ps">PhotoShop</span>
-              </div> -->
             </div>
             <div class="clear-fix"></div>
           </div>
@@ -126,27 +127,50 @@
               <li>
                 <div class="work-head">
                   <span class="work-company" style="font-size: 18px;">
+                    <a href="https://www.sui.com" target="_blank">Tink Labs（深圳商廷客科技有限公司）</a>
+                  </span>
+                  <span class="work-position">前端开发工程师</span> 2018.11 ~ 至今
+                </div>
+                <div class="work-tags">
+                  <span>React</span>
+                  <span>Redux Saga</span>
+                  <span>Webpack</span>
+                  <span>CICD</span>
+                  <span>jQuery</span>
+                  <span>AWS</span>
+                  <span>Mixpanel</span>
+                  <span>GPT</span>
+                  <span>Zeplin</span>
+                </div>
+                <div class="work-content">
+                  <p>主要职责为：</p>
+                  <p>
+                  </p>
+                  - Handy 手机（安卓）首页入口 Web 版（基于 React），使用 Mixpanel 进行数据跟踪，部署在 AWS S3 上，利用 Code Pipeline + Code Build
+                  进行持续集成及部署（CICD）。
+                  </p>
+                  <p>
+                    - 遗留项目维护：1. OSS (operating system support)，基于 jQuery；通用页面（天气、汇率转换、登录页面）。
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="work-head">
+                  <span class="work-company" style="font-size: 18px;">
                     <a href="https://www.sui.com" target="_blank">随手科技有限公司</a>
                   </span>
-                  <span class="work-position">前端开发工程师</span> 2018.9 ~
-                  至今
+                  <span class="work-position">前端开发工程师</span> 2018.9 ~ 2018.11
                 </div>
                 <div class="work-tags">
                   <span>Vue.js</span>
                   <span>Webpack</span>
                   <span>前端自动化</span>
-                  <span>Node</span>
                   <span>jQuery</span>
                 </div>
                 <div class="work-content">
                   <p>主要职责为：</p>
                   <p>
-                    - 智能运营后台的开发与维护，主要基于 Vue.js，准备接入 Node
-                    作为中间层；
-                  </p>
-                  <p>
-                    - 理财后台的开发与维护，基于 jQuery
-                    开发，目前主要在维护，后期有基于 Vue.js 重构的计划。
+                    - 智能运营后台的开发与维护，基于 Vue.js；
                   </p>
                 </div>
               </li>
@@ -156,7 +180,7 @@
                     <a href="https://www.lansheng8.com/" target="_blank">榄盛咨询服务有限公司</a>
                   </span>
                   <span class="work-position">前端开发工程师</span> 2017.6 ~
-                  2018.8
+                  2018.7
                 </div>
                 <div class="work-tags">
                   <span>Vue.js</span>
@@ -174,9 +198,8 @@
                   </p>
                   <p>
                     - 开发榄盛金融内部 OA 系统并打包桌面应用（基于
-                    Electron）；
+                    Electron）。
                   </p>
-                  <p>- 开发榄盛金融相关公司官网、活动页等。</p>
                 </div>
               </li>
               <li>
@@ -197,8 +220,7 @@
                   <p>
                     - 开发智互联 Saas 平台：即享软件（基于 AngularJS(1.0)）；
                   </p>
-                  <p>- 开发营销邮件；</p>
-                  <p>- 开发智互联官网。</p>
+                  <p>- 开发智互联官网、营销邮件及活动页。</p>
                 </div>
               </li>
               <li>
@@ -261,7 +283,8 @@
               <figcaption>
                 <div class="intro">
                   <p>
-                    Handy 手机首页入口 Web 版，使用 Mixpanel 进行数据跟踪，和安卓 Native 部分有数据传递，部署在 AWS S3 上，利用 Code Pipeline + CodeBuild 进行持续集成及部署（CICD）。
+                    Handy 手机首页入口 Web 版，使用 Mixpanel 进行数据跟踪，和安卓 Native 部分有数据传递，部署在 AWS S3 上，利用 Code Pipeline + CodeBuild
+                    进行持续集成及部署（CICD）。
                   </p>
                 </div>
                 <div class="main-info">
@@ -473,7 +496,8 @@
               <figcaption>
                 <div class="intro intro-zhl-prod">
                   <p>
-                    智互联科技有限公司主营产品：<a href="https://uc.zhilink.com/#/login" target="_blank">即享软件</a>。主要基于 Angular 1.0，涉及 NodeJS， React， Gulp 及 Git 多人协作。
+                    智互联科技有限公司主营产品：<a href="https://uc.zhilink.com/#/login" target="_blank">即享软件</a>。主要基于 Angular 1.0，涉及
+                    NodeJS， React， Gulp 及 Git 多人协作。
                   </p>
                 </div>
                 <div class="main-info">
