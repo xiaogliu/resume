@@ -8,6 +8,7 @@ $backgroundColor: #f4f7f6;
 $mainFontColor: #202121;
 $mainColor: #49c5b6;
 $borderRadius: 36px;
+$imageBackgroundColor: #e1f0ef;
 
 .img-place-holder {
   display: none;
@@ -97,6 +98,7 @@ header {
           height: 200px;
           border-radius: 50%;
           overflow: hidden;
+          background-color: $imageBackgroundColor;
         }
         .name-position {
           width: 200px;
@@ -315,7 +317,7 @@ header {
   min-width: 1200px;
   background-color: $backgroundColor;
   overflow: hidden;
-  padding: 40px 0;
+  padding: 70px 0;
   .cover {
     display: none;
     position: fixed;
@@ -333,7 +335,7 @@ header {
     font-size: 17px;
     font-weight: 500;
     text-align: center;
-    padding: 20px 0 50px;
+    padding: 20px 0 40px;
   }
   .project-example {
     width: 33.33%;
@@ -347,7 +349,7 @@ header {
         width: $projectWraperWidth;
         height: $projectWraperWidth;
         overflow: hidden;
-        background: radial-gradient(circle closest-side, #547eb4 50%, white);
+        background: $imageBackgroundColor;
         img {
           vertical-align: middle;
           z-index: 10;

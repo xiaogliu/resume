@@ -9,6 +9,15 @@ import ProgressiveLoad from "./p-load";
 
 // image need import from here
 import "../images/large/avatar.jpg";
+import "../images/large/new-home-page.jpg";
+import "../images/large/full-page.jpg";
+import "../images/large/react-native.jpg";
+import "../images/large/ls-app.jpg";
+import "../images/large/ls-web.jpg";
+import "../images/large/yg-web.jpg";
+import "../images/large/ticket.jpg";
+import "../images/large/zhl-prod.jpg";
+import "../images/large/zhl-web.jpg";
 
 // progressive load image
 new ProgressiveLoad();
