@@ -5,7 +5,7 @@ $navHeight: 70px;
 $imgTop: -464px;
 $transitionTime: 0.1s;
 $backgroundColor: #f4f7f6;
-$mainFontColor: #202121;
+$mainFontColor: #1F1F1F;
 $mainColor: #49c5b6;
 $borderRadius: 36px;
 $imageBackgroundColor: #e1f0ef;
@@ -79,7 +79,7 @@ header {
         border-left: 1px solid #e6eaea;
       }
     }
-    #about {
+    .about {
       padding: 20px;
       .base-info {
         float: left;
@@ -304,11 +304,11 @@ header {
     }
   }
 }
-#project {
+.project {
   min-width: $mainContentWidth;
   background-color: $backgroundColor;
   overflow: hidden;
-  padding: 70px 0;
+  padding: 30px 0;
   .cover {
     display: none;
     position: fixed;

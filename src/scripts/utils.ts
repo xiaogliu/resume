@@ -18,10 +18,10 @@ export function getElementTop(elt: HTMLElement) {
 /**
  * add / remove class
  */
-const hasClass = (elements: HTMLElement, cName: string) => {
+export function hasClass(elements: HTMLElement, cName: string) {
   // ( \\s|^ ) 判断前面是否有空格 （\\s | $ ）判断后面是否有空格 两个感叹号为转换为布尔值 以方便做判断
   return !!elements.className.match(new RegExp("(\\s|^)" + cName + "(\\s|$)"));
-};
+}
 
 export function removeClass(elements: HTMLElement, cName: string) {
   if (hasClass(elements, cName)) {
@@ -52,4 +52,18 @@ export function getViewport() {
     width: document.documentElement.clientWidth,
     height: document.documentElement.clientHeight
   };
+}
+
+/**
+ * 判断是否是手机
+ */
+export function isMobile() {
+  if (
+    navigator.userAgent.match(
+      /Android|iPhone|iPad|iPod|BlackBerry|Opera Mini|IEMobile|Windows Phone/i
+    )
+  ) {
+    return true;
+  }
+  return false;
 }
