@@ -18,19 +18,38 @@ export function getElementTop(elt: HTMLElement) {
 /**
  * add / remove class
  */
-const hasClass = (elements:HTMLElement, cName: string) => {
-  // ( \\s|^ ) 判断前面是否有空格 （\\s | $ ）判断后面是否有空格 两个感叹号为转换为布尔值 以方便做判断 
-  return !!elements.className.match(new RegExp("(\\s|^)" + cName + "(\\s|$)")); 
+const hasClass = (elements: HTMLElement, cName: string) => {
+  // ( \\s|^ ) 判断前面是否有空格 （\\s | $ ）判断后面是否有空格 两个感叹号为转换为布尔值 以方便做判断
+  return !!elements.className.match(new RegExp("(\\s|^)" + cName + "(\\s|$)"));
 };
 
-export function removeClass(elements:HTMLElement, cName: string) {
+export function removeClass(elements: HTMLElement, cName: string) {
   if (hasClass(elements, cName)) {
     // replace方法是替换
-      elements.className = elements.className.replace(new RegExp("(\\s|^)" + cName + "(\\s|$)"), " ");
-  };
-};
-export function addClass(elements:HTMLElement, cName: string) {
+    elements.className = elements.className.replace(
+      new RegExp("(\\s|^)" + cName + "(\\s|$)"),
+      " "
+    );
+  }
+}
+export function addClass(elements: HTMLElement, cName: string) {
   if (!hasClass(elements, cName)) {
-      elements.className += " " + cName;
+    elements.className += " " + cName;
+  }
+}
+
+/**
+ * 获取视图宽高，更好的兼容性
+ */
+export function getViewport() {
+  if (document.compatMode === "BackCompat") {
+    return {
+      width: document.body.clientWidth,
+      height: document.body.clientHeight
+    };
+  }
+  return {
+    width: document.documentElement.clientWidth,
+    height: document.documentElement.clientHeight
   };
-};
+}

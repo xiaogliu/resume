@@ -3,6 +3,7 @@
 // css import sequence impact cancat css
 import "../styles/reset.css";
 import "../styles/index.scss";
+import "../styles/index-mobile.scss";
 import "../styles/p-load.scss";
 import * as utils from "./utils";
 import ProgressiveLoad from "./p-load";
@@ -10,7 +11,7 @@ import ProgressiveLoad from "./p-load";
 // progressive load image
 new ProgressiveLoad({
   width: 300,
-  height: 300,
+  height: 300
 });
 
 document.addEventListener("DOMContentLoaded", () => {

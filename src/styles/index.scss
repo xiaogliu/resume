@@ -17,6 +17,7 @@ $imageBackgroundColor: #e1f0ef;
 .p-load-image-container {
   div {
     background: $imageBackgroundColor;
+    // background: url(../images/loading.gif) no-repeat center;
   }
 }
 body {
