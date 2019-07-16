@@ -5,6 +5,14 @@ const common = require("./webpack.common");
 
 module.exports = merge(common, {
   mode: "development",
+  output: {
+    // output directory
+    path: path.resolve(__dirname, "../dist"),
+    // variable in []
+    filename: "js/[name].[hash:8].js",
+    // html static file directory
+    publicPath: "/"
+  },
   module: {
     rules: [
       {
@@ -29,5 +37,5 @@ module.exports = merge(common, {
     port: 9000,
     hot: true,
     open: true
-  },
+  }
 });

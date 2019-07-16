@@ -8,14 +8,6 @@ module.exports = {
     // entry files, can multiple files
     index: "./src/scripts/index.ts"
   },
-  output: {
-    // output directory
-    path: path.resolve(__dirname, "../dist"),
-    // variable in []
-    filename: "js/[name].[hash:8].js",
-    // html static file directory
-    publicPath: "/"
-  },
   module: {
     rules: [
       {
