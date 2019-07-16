@@ -3,9 +3,9 @@
 // css import sequence impact cancat css
 import "../styles/reset.css";
 import "../styles/index.scss";
-import "../styles/progressive-load.scss";
+import "../styles/p-load.scss";
 import * as utils from "./utils";
-import ProgressiveLoad from "./progressive-load";
+import ProgressiveLoad from "./p-load";
 
 // progressive load image
 new ProgressiveLoad();
