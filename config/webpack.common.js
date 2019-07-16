@@ -42,7 +42,7 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "images/large/[name].[ext]"
+              name: "images/[name].[ext]"
             }
           }
         ]

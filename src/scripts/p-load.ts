@@ -64,16 +64,17 @@ class ProgressiveLoad {
         const img: HTMLImageElement = new Image();
         img.src = $small.src;
         img.onload = () => {
-          console.time('a')
-          $small.classList.add("loaded");
           StackBlur.image($small, $canvas, this.options.radius);
-          console.timeEnd('a')
+
+          // let canvas fade in load
+          $canvas.classList.add("loaded");
         };
 
         // load large image
         const imgLarge: HTMLImageElement = new Image();
         imgLarge.src = e.dataset.large;
         imgLarge.onload = () => {
+          // img fade in load
           imgLarge.classList.add("loaded");
         };
         e.appendChild(imgLarge);

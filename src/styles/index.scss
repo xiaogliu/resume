@@ -10,18 +10,20 @@ $mainColor: #49c5b6;
 $borderRadius: 36px;
 $imageBackgroundColor: #e1f0ef;
 
-.img-place-holder {
-  display: none;
-}
 .main-content {
   width: $mainContentWidth;
   margin: 0 auto;
+}
+.p-load-image-container {
+  div {
+    background: $imageBackgroundColor;
+  }
 }
 body {
   color: $mainFontColor;
 }
 header {
-  min-width: 1300px;
+  min-width: $mainContentWidth;
   background-color: $backgroundColor;
   padding-bottom: 40px;
   border-bottom: 1px solid #e6eaea;
@@ -29,6 +31,7 @@ header {
     @extend .main-content;
     padding-top: $navHeight + 30;
     nav {
+      min-width: $mainContentWidth;
       position: fixed;
       height: $navHeight;
       width: 100%;
@@ -124,25 +127,12 @@ header {
         }
         .my-info {
           a {
-            // padding: 1px 5px 0 5px;
             color: $mainFontColor;
-            // box-shadow: none;
             transition: color 0.3s;
-            // animation: sploosh 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-            // animation-iteration-count: infinite !important;
-            // border-radius: $borderRadius;
             &:hover {
               color: $mainColor;
             }
           }
-          // @keyframes sploosh {
-          //   0% {
-          //     box-shadow: 0 0 0 0 rgba(255, 78, 78, 0.7);
-          //   }
-          //   100% {
-          //     box-shadow: 0 0 10px 10px rgba(255, 78, 78, 0);
-          //   }
-          // }
         }
         .website {
           p {
@@ -152,7 +142,7 @@ header {
               display: inline-block;
               width: 24px;
               height: 24px;
-              background-image: url(../images/large/icon.png);
+              background-image: url(../images/icon.png);
               background-size: 24px;
             }
             i.blog {
@@ -314,7 +304,7 @@ header {
   }
 }
 #project {
-  min-width: 1200px;
+  min-width: $mainContentWidth;
   background-color: $backgroundColor;
   overflow: hidden;
   padding: 70px 0;
@@ -420,7 +410,7 @@ header {
             background-color: #9fd2d6;
             color: #fff;
             margin: 10px 5px 10px 0;
-            // margin: 0 5px 0 5px; 
+            // margin: 0 5px 0 5px;
             height: 15px;
             line-height: 15px;
             padding: 1px 5px 0 5px;
