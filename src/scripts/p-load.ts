@@ -54,8 +54,13 @@ class ProgressiveLoad {
         if (!utils.isMobile()) {
           const $small: HTMLImageElement = e.querySelector("img");
           // padding-bottom set placeholder, avoid reflow
+          // const addInnerHtml: string = `
+          //   <div style="padding-bottom: ${this.imgRatio}%;"></div>
+          //   <canvas></canvas>
+          // `;
+
+          // js load need some time, and the div render slow
           const addInnerHtml: string = `
-            <div style="padding-bottom: ${this.imgRatio}%;"></div>
             <canvas></canvas>
           `;
           e.innerHTML = e.innerHTML + addInnerHtml;
