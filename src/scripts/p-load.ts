@@ -100,12 +100,13 @@ class ProgressiveLoad {
             utils.addClass($canvas, "loaded");
             // $canvas.classList.add("loaded");
           };
-        } else {
-          const addInnerHtml: string = `
-            <div style="padding-bottom: ${this.imgRatio}%;"></div>
-          `;
-          e.innerHTML = e.innerHTML + addInnerHtml;
-        }
+        } 
+        // else {
+        //   const addInnerHtml: string = `
+        //     <div style="padding-bottom: ${this.imgRatio}%;"></div>
+        //   `;
+        //   e.innerHTML = e.innerHTML + addInnerHtml;
+        // }
 
         // load large image
         const imgLarge: HTMLImageElement = new Image();
