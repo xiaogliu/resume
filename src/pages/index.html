@@ -5,11 +5,28 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>test</title>
+  <title>刘小光的简历</title>
   <link rel="shortcut icon" href="../images/favicon.ico" />
 </head>
 
 <body>
+  <script>
+    var isMobile = function isMobile() {
+      if (
+        navigator.userAgent.match(
+          /Android|iPhone|BlackBerry|Opera Mini|IEMobile|Windows Phone/i
+        )
+      ) {
+        return true;
+      }
+      return false;
+    }
+    // execute ASAP
+    var bodyEle = document.querySelector("body");
+    if (isMobile()) {
+      bodyEle.setAttribute('id', 'mobileVersion')
+    }
+  </script>
   <header>
     <div class="header-container" id="toTop">
       <nav>
@@ -128,7 +145,7 @@
                   <span class="work-company" style="font-size: 18px;">
                     <a href="https://www.sui.com" target="_blank">Tink Labs（深圳商廷客科技有限公司）</a>
                   </span>
-                  <span class="work-position">前端开发工程师</span> 2018.11 ~ 至今
+                  <span class="work-position">前端开发工程师</span><span> 2018.11 ~ 至今</span>
                 </div>
                 <div class="work-tags">
                   <span>React</span>
@@ -157,7 +174,7 @@
                   <span class="work-company" style="font-size: 18px;">
                     <a href="https://www.sui.com" target="_blank">随手科技有限公司</a>
                   </span>
-                  <span class="work-position">前端开发工程师</span> 2018.9 ~ 2018.11
+                  <span class="work-position">前端开发工程师</span><span> 2018.9 ~ 2018.11</span>
                 </div>
                 <div class="work-tags">
                   <span>Vue</span>
@@ -177,8 +194,8 @@
                   <span class="work-company" style="font-size: 18px;">
                     <a href="https://www.lansheng8.com/" target="_blank">榄盛咨询服务有限公司</a>
                   </span>
-                  <span class="work-position">前端开发工程师</span> 2017.6 ~
-                  2018.7
+                  <span class="work-position">前端开发工程师</span><span> 2017.6 ~
+                  2018.7</span>
                 </div>
                 <div class="work-tags">
                   <span>Vue</span>
@@ -205,8 +222,8 @@
                   <span class="work-company" style="font-size: 18px;">
                     <a href="https://www.zhilink.com/" target="_blank">智互联（深圳）科技有限公司</a>
                   </span>
-                  <span class="work-position">前端开发工程师</span> 2016.7 ~
-                  2017.6
+                  <span class="work-position">前端开发工程师</span><span> 2016.7 ~
+                  2017.6</span>
                 </div>
                 <div class="work-tags">
                   <span>AngularJS(1.0)</span>
@@ -226,8 +243,7 @@
                   <span class="work-company" style="font-size: 18px;">
                     <a href="http://www.konka.com/" target="_blank">康佳集团股份有限公司</a>
                   </span>
-                  <span class="work-position">工艺工程师（兼职前端开发）</span>
-                  2014.7 ~ 2016.7
+                  <span class="work-position">工艺工程师（兼职前端开发）</span><span> 2014.7 ~ 2016.7</span>
                 </div>
                 <div class="work-tags">
                   <span>Bootstrap</span>

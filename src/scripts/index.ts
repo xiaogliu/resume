@@ -8,12 +8,6 @@ import "../styles/p-load.scss";
 import * as utils from "./utils";
 import ProgressiveLoad from "./p-load";
 
-// execute ASAP
-const $bodyEle: HTMLElement = utils.$("body");
-if (utils.isMobile()) {
-  $bodyEle.setAttribute('id', 'mobileVersion')
-}
-
 // progressive load image
 new ProgressiveLoad({
   width: 300,
