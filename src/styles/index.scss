@@ -338,9 +338,12 @@ header {
       position: relative;
       width: $projectWraperWidth;
       margin: 0 auto;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.08);
       .project-cover {
         width: $projectWraperWidth;
-        height: $projectWraperWidth;
+        height: 225px;
         overflow: hidden;
         background: $imageBackgroundColor;
         img {
