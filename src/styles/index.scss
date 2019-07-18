@@ -98,8 +98,9 @@ header {
           }
         }
         .avatar {
-          width: 200px;
-          height: 200px;
+          width: 170px;
+          height: 170px;
+          margin-left: 16px;
           border-radius: 50%;
           overflow: hidden;
           background-color: $imageBackgroundColor;
@@ -146,6 +147,8 @@ header {
               display: inline-block;
               width: 24px;
               height: 24px;
+              background-color: $imageBackgroundColor;
+              border-radius: 50%;
               background-image: url(../images/icon.png);
               background-size: 24px;
             }
