@@ -14,6 +14,7 @@ module.exports = {
         test: /\.ts$/,
         loader: "babel-loader",
         options: {
+          plugins: ["@babel/plugin-transform-object-assign"],
           presets: [
             [
               "@babel/preset-env",
