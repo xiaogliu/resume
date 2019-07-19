@@ -31,7 +31,7 @@ class ProgressiveLoad {
       radius: 30
     };
 
-    this.options = { ...defaultOptions, ...options };
+    this.options = Object.assign(defaultOptions, options);
 
     // distruct needn't state type, it's same with right object
     const { width, height } = this.options;
