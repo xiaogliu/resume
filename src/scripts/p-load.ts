@@ -77,36 +77,7 @@ class ProgressiveLoad {
             utils.addClass($canvas, "loaded");
             // $canvas.classList.add("loaded");
           };
-        } else if (utils.hasClass(e, 'avatar-img')) {
-          // if mobile version just progessive load avatar,
-          // because only avatar size is not change
-          const $small: HTMLImageElement = e.querySelector("img");
-          // padding-bottom set placeholder, avoid reflow
-          const addInnerHtml: string = `
-            <div style="padding-bottom: ${this.imgRatio}%;"></div>
-            <canvas></canvas>
-          `;
-          e.innerHTML = e.innerHTML + addInnerHtml;
-          const $canvas: HTMLCanvasElement = e.querySelector("canvas");
-  
-          // when small image loaded handling it use canvas, this code just avoid small image not loaded
-          // when canvas handle image
-          const img: HTMLImageElement = new Image();
-          img.src = $small.src;
-          img.onload = () => {
-            StackBlur.image($small, $canvas, this.options.radius);
-  
-            // let canvas fade in load
-            utils.addClass($canvas, "loaded");
-            // $canvas.classList.add("loaded");
-          };
-        } 
-        // else {
-        //   const addInnerHtml: string = `
-        //     <div style="padding-bottom: ${this.imgRatio}%;"></div>
-        //   `;
-        //   e.innerHTML = e.innerHTML + addInnerHtml;
-        // }
+        }
 
         // load large image
         const imgLarge: HTMLImageElement = new Image();
