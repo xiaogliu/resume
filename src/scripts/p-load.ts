@@ -110,7 +110,8 @@ class ProgressiveLoad {
 
         // load large image
         const imgLarge: HTMLImageElement = new Image();
-        imgLarge.src = e.dataset.large;
+        // ie10 not support dataset
+        imgLarge.src = e.getAttribute('data-large');
         imgLarge.onload = () => {
           // img fade in load
           utils.addClass(imgLarge, "loaded");
