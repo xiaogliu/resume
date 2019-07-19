@@ -104,6 +104,10 @@ header {
           border-radius: 50%;
           overflow: hidden;
           background-color: $imageBackgroundColor;
+          img {
+            width: 100%;
+            height: 100%;
+          }
           canvas, img {
             border-radius: 50%;
           }
