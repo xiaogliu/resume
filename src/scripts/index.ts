@@ -23,8 +23,15 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("load", () => {
     const projectTop: number = utils.getElementTop(utils.$("#project"));
     window.addEventListener("scroll", () => {
-      console.log(document.documentElement.scrollTop, projectTop, 2999);
-      if (document.documentElement.scrollTop > projectTop - 70) {
+      console.log(
+        window.scrollY || document.documentElement.scrollTop,
+        projectTop,
+        2999
+      );
+      if (
+        (window.scrollY || document.documentElement.scrollTop) >
+        projectTop - 70
+      ) {
         utils.removeClass($navAbout, "nav-active");
         utils.addClass($navProject, "nav-active");
       } else {
@@ -32,5 +39,5 @@ document.addEventListener("DOMContentLoaded", () => {
         utils.removeClass($navProject, "nav-active");
       }
     });
-  })
+  });
 });
