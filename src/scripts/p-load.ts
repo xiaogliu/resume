@@ -51,7 +51,9 @@ class ProgressiveLoad {
 
       // set each image progessive loading
       imageContainer.forEach(e => {
-        if (!utils.isMobile()) {
+
+        // mobile img auto resize, not use canvas
+        if (!utils.isMobile() || utils.hasClass(e, 'avatar-img')) {
           const $small: HTMLImageElement = e.querySelector("img");
           // padding-bottom set placeholder, avoid reflow
           // const addInnerHtml: string = `
