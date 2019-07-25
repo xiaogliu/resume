@@ -3,5 +3,5 @@
     "tslint:latest",
     "tslint-config-prettier"
   ],
-  "object-literal-sort-keys": false,
+  "object-literal-sort-keys": false
 }
