@@ -4,15 +4,15 @@
 import "../styles/reset.css";
 import "../styles/index.scss";
 import "../styles/index-mobile.scss";
-import "../styles/p-load.scss";
+import "../styles/gload.scss";
 import * as utils from "./utils";
-import ProgressiveLoad from "./p-load";
+import {GloadCSSBlur, GloadCanvas} from "./gload-es.min.js";
 
-// progressive load image
-new ProgressiveLoad({
-  width: 300,
-  height: 300
-});
+if (utils.isMobile()) {
+  new GloadCSSBlur()
+} else {
+  new GloadCanvas()
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   // const $headerEle: HTMLElement = utils.$("header");
