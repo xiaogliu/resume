@@ -3,6 +3,7 @@ const path = require("path");
 // const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const common = require("./webpack.common");
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = merge(common, {
   mode: "production",
@@ -55,7 +56,9 @@ module.exports = merge(common, {
   plugins: [
     new MiniCssExtractPlugin({
       filename: "css/[name].[contenthash:8].css"
-    })
+    }),
+    // es6 tree shaking, must use if add minicssextractplugin
+    new TerserPlugin()
   ],
   optimization: {
     // webpack has compress code as default

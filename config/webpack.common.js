@@ -14,28 +14,42 @@ module.exports = {
         test: /\.ts$/,
         loader: "babel-loader",
         options: {
-          plugins: ["@babel/plugin-transform-object-assign"],
           presets: [
             [
               "@babel/preset-env",
               {
+                modules: false,
                 targets: {
                   ie: "10"
-                }
+                },
+                loose: true
               }
             ],
-            "@babel/typescript"
+            "@babel/typescript",
           ]
         },
         exclude: /node_modules/
       },
       {
-        test: /\.(png|jpg|jpeg|svg|gif)$/,
+        test: /\.(jpg|jpeg|svg|gif)$/,
         use: [
           {
             loader: "file-loader",
             options: {
-              name: "images/[name].[ext]"
+              name: "images/[name].[ext]",
+            }
+          }
+        ]
+      },
+      // css backgroud use png and handle its path individually
+      {
+        test: /\.(png)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "images/[name].[ext]",
+              publicPath:'../'
             }
           }
         ]

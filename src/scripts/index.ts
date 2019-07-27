@@ -1,17 +1,16 @@
-// import "../images/";
-
 // css import sequence impact cancat css
 import "../styles/reset.css";
 import "../styles/index.scss";
 import "../styles/index-mobile.scss";
 import "../styles/gload.scss";
 import * as utils from "./utils";
-import {GloadCSSBlur, GloadCanvas} from "./gload-es.min.js";
+// @ts-ignore
+import { GloadCSSBlur, GloadCanvas } from "gload";
 
 if (utils.isMobile()) {
-  new GloadCSSBlur()
+  new GloadCSSBlur();
 } else {
-  new GloadCanvas()
+  new GloadCanvas();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -23,11 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("load", () => {
     const projectTop: number = utils.getElementTop(utils.$("#project"));
     window.addEventListener("scroll", () => {
-      console.log(
-        window.scrollY || document.documentElement.scrollTop,
-        projectTop,
-        2999
-      );
       if (
         (window.scrollY || document.documentElement.scrollTop) >
         projectTop - 70
