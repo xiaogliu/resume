@@ -14,14 +14,13 @@ if (utils.isMobile()) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // const $headerEle: HTMLElement = utils.$("header");
-  // const $headerHeight: number = $headerEle.offsetHeight;
   const $navAbout: HTMLElement = utils.$(".nav-about");
   const $navProject: HTMLElement = utils.$(".nav-project");
 
   window.addEventListener("load", () => {
+    // monitor scroll and change nav style
     const projectTop: number = utils.getElementTop(utils.$("#project"));
-    window.addEventListener("scroll", () => {
+    function scrollHandler(): void {
       if (
         (window.scrollY || document.documentElement.scrollTop) >
         projectTop - 70
@@ -32,6 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
         utils.addClass($navAbout, "nav-active");
         utils.removeClass($navProject, "nav-active");
       }
-    });
+    }
+
+    // add throttle
+    const throttleScrollHandler = utils.throttle(scrollHandler, 200);
+    window.addEventListener("scroll", throttleScrollHandler);
   });
 });

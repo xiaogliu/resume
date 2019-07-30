@@ -11,7 +11,7 @@ module.exports = merge(common, {
     // output directory
     path: path.resolve(__dirname, "../dist"),
     // variable in []
-    filename: "js/[name].[hash:8].js",
+    filename: "js/[name].[chunkhash:8].js",
     // html static file directory
     publicPath: "./"
   },

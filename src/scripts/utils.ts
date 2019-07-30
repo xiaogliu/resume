@@ -44,13 +44,13 @@ export function addClass(elements: HTMLElement, cName: string) {
 export function getViewport() {
   if (document.compatMode === "BackCompat") {
     return {
-      width: document.body.clientWidth,
-      height: document.body.clientHeight
+      height: document.body.clientHeight,
+      width: document.body.clientWidth
     };
   }
   return {
-    width: document.documentElement.clientWidth,
-    height: document.documentElement.clientHeight
+    height: document.documentElement.clientHeight,
+    width: document.documentElement.clientWidth
   };
 }
 
@@ -66,4 +66,17 @@ export function isMobile() {
     return true;
   }
   return false;
+}
+
+export function throttle(method: () => void, delay: number) {
+  let wait = false;
+  return function(...args: any) {
+    if (!wait) {
+      wait = true;
+      setTimeout(() => {
+        wait = false;
+        method.apply(this, args);
+      }, delay);
+    }
+  };
 }

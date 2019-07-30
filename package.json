@@ -15,7 +15,8 @@
   "author": "Xiaoguang Liu",
   "license": "MIT",
   "dependencies": {
-    "gload": "^1.0.0"
+    "gload": "^1.0.0",
+    "tslint": "^5.18.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.0",
